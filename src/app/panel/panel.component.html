@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="my-4">Aconsegueix la millor qualitat</h1>
+    <form [formGroup]="formulario">
+      <div *ngFor="let producto of productos; let i = index" class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ producto.nombre }}</h5>
+          <p class="card-text">Programació d'una web responsive completa</p>
+          <h3 class="card-text">{{ producto.precio }} €</h3>
+          <label>
+            <input type="checkbox" [formControlName]="i" />
+            Afegir
+          </label>
+        </div>
+      </div>
+    </form>
+    <h2>Preu pressupostat: {{ total }} €</h2>
+  </div>
+  
