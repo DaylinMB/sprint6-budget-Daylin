@@ -18,6 +18,11 @@
   height: 1.5em;
 }
 
+.form-check-input:checked {
+  background-color: green;
+  border-color: green;
+}
+
 .text-right {
   text-align: right;
-}
+}/*# sourceMappingURL=budgets-list.component.css.map */

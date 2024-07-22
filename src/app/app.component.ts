@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { BudgetsListComponent } from './budgets-list/budgets-list.component';
 import { CommonModule } from '@angular/common';
+import { BudgetsListComponent } from './budgets-list/budgets-list.component';
 
 @Component({
   selector: 'app-root',

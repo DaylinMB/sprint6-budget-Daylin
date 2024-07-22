@@ -1,18 +1,27 @@
-<div class="container">
-    <h1 class="my-4">Aconsegueix la millor qualitat</h1>
-    <form [formGroup]="formulario">
-      <div *ngFor="let producto of productos; let i = index" class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">{{ producto.nombre }}</h5>
-          <p class="card-text">Programació d'una web responsive completa</p>
-          <h3 class="card-text">{{ producto.precio }} €</h3>
-          <label>
-            <input type="checkbox" [formControlName]="i" />
-            Afegir
-          </label>
-        </div>
-      </div>
-    </form>
-    <h2>Preu pressupostat: {{ total }} €</h2>
-  </div>
-  
+<!-- panel.component.html -->
+<div *ngIf="showPanel" class="panel-container">
+  <form [formGroup]="panelForm" class="form-inline">
+    <div class="form-group">
+      <label>Nombre de pàgines</label>
+      <button type="button" class="btn btn-light" (click)="decrement('pagines')">-</button>
+      <input type="number" class="form-control" id="pagines" formControlName="pagines">
+      <button type="button" class="btn btn-light" (click)="increment('pagines')">+</button>
+    </div>
+    
+    <br>
+
+    <div class="form-group">
+      <label>Nombre de llenguatges</label>
+      <button type="button" class="btn btn-light" (click)="decrement('llenguatges')">-</button>
+      <input type="number" class="form-control" id="llenguatges" formControlName="llenguatges">
+      <button type="button" class="btn btn-light" (click)="increment('llenguatges')">+</button>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- 
+ <button onclick="decrementQuantity(${item.id})" class="btn btn-secondary btn-sm">-</button>
+                    <span class="quantity btn btn-sm">${item.quantity}</span>
+-->

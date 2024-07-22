@@ -1,3 +1,4 @@
+/*budgets-list.component.scss*/
 $card-border-radius: 10px;
 $card-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 $form-check-input-size: 1.5em;
@@ -16,7 +17,7 @@ $max-width-container: 800px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+  }  
 }
 
 .form-check-input {
@@ -24,6 +25,15 @@ $max-width-container: 800px;
   height: $form-check-input-size;
 }
 
+.form-check-input:checked {
+  background-color: green;
+  border-color: green;
+}
+
 .text-right {
   text-align: right;
+}
+
+.border-success {
+  border: 2px solid green !important;
 }

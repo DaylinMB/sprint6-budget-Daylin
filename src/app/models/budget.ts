@@ -1,4 +1,9 @@
+/*budget.ts*/
 export interface Budget {
-    nombre: string;
-    precio: number;
-  }  
+    seo: boolean;
+    ads: boolean;
+    web: boolean;
+    pagines: number;
+    llenguatges: number;
+    total: number;
+  }
