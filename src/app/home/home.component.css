@@ -1,1 +1,33 @@
-/*# sourceMappingURL=home.component.css.map */
+/*home.component.sass*/
+.container {
+  max-width: 800px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.card .card-b ody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-check-input {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.form-check-input:checked {
+  background-color: green;
+  border-color: green;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.border-success {
+  border: 2px solid green !important;
+}/*# sourceMappingURL=home.component.css.map */

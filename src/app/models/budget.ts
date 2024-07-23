@@ -6,4 +6,7 @@ export interface Budget {
     pagines: number;
     llenguatges: number;
     total: number;
+    nombre: string;
+    telefono: string;
+    email: string;
   }

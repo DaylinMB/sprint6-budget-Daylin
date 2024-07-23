@@ -14,6 +14,9 @@ export class BudgetService {
     pagines: 1,
     llenguatges: 1,
     total: 0,
+    nombre: '',
+    telefono: '',
+    email: '',
   };
 
   private budgetSubject = new BehaviorSubject<Budget>(this.budget);

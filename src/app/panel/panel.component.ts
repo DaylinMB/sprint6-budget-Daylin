@@ -1,5 +1,5 @@
 /*panel.component.ts*/
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { BudgetService } from '../services/budget.service';
 import { CommonModule } from '@angular/common';
@@ -11,14 +11,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.scss'],
 })
-export class PanelComponent implements OnInit {
-  @Input() showPanel: boolean = true;
+export class PanelComponent implements OnInit, OnChanges {
+  @Input() showPanel: boolean = true; // Verificar que esté correctamente tipado
   panelForm: FormGroup;
 
   constructor(private fb: FormBuilder, private budgetService: BudgetService) {
     this.panelForm = this.fb.group({
-      pagines: new FormControl(this.budgetService.getBudgets().pagines),
-      llenguatges: new FormControl(this.budgetService.getBudgets().llenguatges),
+      pagines: new FormControl(1),
+      llenguatges: new FormControl(1),
     });
   }
 
@@ -28,22 +28,28 @@ export class PanelComponent implements OnInit {
     });
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['showPanel'] && changes['showPanel'].currentValue === true) {
+      this.resetForm();
+    }
+  }
+
+  resetForm(): void {
+    this.panelForm.reset({
+      pagines: 1,
+      llenguatges: 1
+    });
+  }
+
   increment(controlName: string) {
     const control = this.panelForm.get(controlName) as FormControl;
     control.setValue(control.value + 1);
-    this.updateBudget();
   }
 
   decrement(controlName: string) {
     const control = this.panelForm.get(controlName) as FormControl;
     if (control.value > 1) {
       control.setValue(control.value - 1);
-      this.updateBudget();
     }
-  }
-  
-  updateBudget() {
-    const updateValues = this.panelForm.value;
-    this.budgetService.updateBudget(updateValues);
   }
 }
