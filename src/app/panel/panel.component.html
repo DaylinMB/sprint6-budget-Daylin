@@ -13,7 +13,7 @@
 
     <div class="form-group d-flex justify-content-end align-items-center">
       <button type="button" class="btn btn-info me-2" data-bs-toggle="modal" data-bs-target="#helpLanguagesModal">
-        <i class="bi bi-info-circle"></i>
+       <i class="bi bi-info-circle"></i>
       </button>
       <label class="me-2"><strong>Nombre de llenguatges</strong></label>
       <button type="button" class="btn btn-light me-2" (click)="decrement('llenguatges')">-</button>
@@ -29,11 +29,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="helpPagesModalLabel">Ajuda sobre Nombre de pàgines</h5>
+        <h5 class="modal-title" id="helpPagesModalLabel">Número de pàgines</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Aquí va la informació sobre el nombre de pàgines.
+        Afegeix les pàgine que tindrà el teu projecte.
+        El cost de cada pàgine és de 30€.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
@@ -46,16 +47,27 @@
 <div class="modal fade" id="helpLanguagesModal" tabindex="-1" aria-labelledby="helpLanguagesModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
+      
+      <!--
       <div class="modal-header">
-        <h5 class="modal-title" id="helpLanguagesModalLabel">Ajuda sobre Nombre de llenguatges</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        Aquí va la informació sobre el nombre de llenguatges.
-      </div>
+       <div class="modal-body">
+       </div>
+      -->
+
+      <h4 class="modal-title" id="helpLanguagesModalLabel">Número de llenguatges</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <h5>Afegeix les llenguatges que tindrà el teu projecte. <br>
+      El cost de cada llenguatge és de 30€.
+      </h5>
+
+      <!--
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
       </div>
+      -->
+
     </div>
   </div>
 </div>

@@ -1,3 +1,4 @@
+/*budgets-list.component.scss*/
 .container {
   max-width: 800px;
 }
@@ -25,4 +26,8 @@
 
 .text-right {
   text-align: right;
+}
+
+.border-success {
+  border: 2px solid green !important;
 }/*# sourceMappingURL=budgets-list.component.css.map */

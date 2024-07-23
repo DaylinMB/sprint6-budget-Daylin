@@ -52,5 +52,4 @@ export class BudgetsListComponent implements OnInit {
   isCardSelected(serviceName: string): boolean {
     return this.presupuestoForm.get(serviceName)?.value;
   }
-  
 }
