@@ -1,27 +1,61 @@
 <!-- panel.component.html -->
 <div *ngIf="showPanel" class="panel-container">
   <form [formGroup]="panelForm" class="form-inline">
-    <div class="form-group">
-      <label>Nombre de pàgines</label>
-      <button type="button" class="btn btn-light" (click)="decrement('pagines')">-</button>
-      <input type="number" class="form-control" id="pagines" formControlName="pagines">
+    <div class="form-group d-flex justify-content-end align-items-center mb-3">
+      <button type="button" class="btn btn-info me-2" data-bs-toggle="modal" data-bs-target="#helpPagesModal">
+        <i class="bi bi-info-circle"></i>
+      </button>
+      <label class="me-2"><strong>Nombre de pàgines</strong></label>
+      <button type="button" class="btn btn-light me-2" (click)="decrement('pagines')">-</button>
+      <input type="number" class="form-control text-center me-2" id="pagines" formControlName="pagines">
       <button type="button" class="btn btn-light" (click)="increment('pagines')">+</button>
     </div>
-    
-    <br>
 
-    <div class="form-group">
-      <label>Nombre de llenguatges</label>
-      <button type="button" class="btn btn-light" (click)="decrement('llenguatges')">-</button>
-      <input type="number" class="form-control" id="llenguatges" formControlName="llenguatges">
+    <div class="form-group d-flex justify-content-end align-items-center">
+      <button type="button" class="btn btn-info me-2" data-bs-toggle="modal" data-bs-target="#helpLanguagesModal">
+        <i class="bi bi-info-circle"></i>
+      </button>
+      <label class="me-2"><strong>Nombre de llenguatges</strong></label>
+      <button type="button" class="btn btn-light me-2" (click)="decrement('llenguatges')">-</button>
+      <input type="number" class="form-control text-center me-2" id="llenguatges" formControlName="llenguatges">
       <button type="button" class="btn btn-light" (click)="increment('llenguatges')">+</button>
     </div>
   </form>
 </div>
 
 
+<!-- Modal for Pages -->
+<div class="modal fade" id="helpPagesModal" tabindex="-1" aria-labelledby="helpPagesModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="helpPagesModalLabel">Ajuda sobre Nombre de pàgines</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Aquí va la informació sobre el nombre de pàgines.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!-- 
- <button onclick="decrementQuantity(${item.id})" class="btn btn-secondary btn-sm">-</button>
-                    <span class="quantity btn btn-sm">${item.quantity}</span>
--->
+<!-- Modal for Languages -->
+<div class="modal fade" id="helpLanguagesModal" tabindex="-1" aria-labelledby="helpLanguagesModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="helpLanguagesModalLabel">Ajuda sobre Nombre de llenguatges</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Aquí va la informació sobre el nombre de llenguatges.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
+      </div>
+    </div>
+  </div>
+</div>
