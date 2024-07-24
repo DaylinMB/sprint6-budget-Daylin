@@ -3,7 +3,6 @@ $card-border-radius: 10px;
 $card-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 $form-check-input-size: 1.5em;
 $max-width-container: 800px;
-$boder-gree: #0f8f0f;
 
 .container {
   max-width: $max-width-container;
@@ -26,9 +25,15 @@ $boder-gree: #0f8f0f;
   height: $form-check-input-size;
 }
 
+.form-check-input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgba(15, 220, 39, 0.25);
+}
+
+
 .form-check-input:checked {
-  background-color: $boder-gree;
-  border-color: $boder-gree;
+  background-color: green;
+  border-color: green;
 }
 
 .text-right {
@@ -36,6 +41,5 @@ $boder-gree: #0f8f0f;
 }
 
 .border-success {
-  border: 2px solid $boder-gree !important;
+  border: 2px solid green !important;
 }
- 

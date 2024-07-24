@@ -27,3 +27,54 @@
     <h3>Preu pressupostat: {{ total }} €</h3>
   </div>
 </div>
+
+
+
+
+<!--
+  <div class="container mt-5">
+    <h2>Aconsegueix la millor qualitat</h2>
+  
+    <form [formGroup]="presupuestoForm">
+      @for (servicio of servicios; track servicio.nombre) {
+        <div class="card mb-3 border" [ngClass]="{'border-success shadow': isCardSelected(servicio.nombre)}">
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="card-title">{{ servicio.descripcion }}</h5>
+              <p class="card-text">Programació d'una web responsive completa</p>
+            </div>
+            <div class="text-center">
+              <h4>{{ servicio.precio }} €</h4>
+            </div>
+            <div>
+              <input class="form-check-input me-2" type="checkbox" [formControlName]="servicio.nombre">
+              <label class="form-check-label">Afegir</label>
+            </div>
+          </div>
+          <app-panel *ngIf="showPanel[servicio.nombre]" [showPanel]="showPanel[servicio.nombre]"></app-panel>
+        </div>
+      }
+    </form>
+  
+    <form [formGroup]="clientForm" class="mt-4">
+      <div class="mb-3">
+        <label for="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+      </div>
+      <div class="mb-3">
+        <label for="form-label">Teléfono</label>
+        <input type="text" class="form-control" formControlName="telefono">
+      </div>
+      <div class="mb-3">
+        <label for="form-label">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+      </div>
+    </form>
+  
+    <div class="mt-3 text-right">
+      <h3>Preu pressupostat: {{ total }} €</h3>
+      <button type="button" class="btn btn-primary" (click)="addBudget()">Guardar Presupuesto</button>
+    </div>
+    <app-budgets-list></app-budgets-list>
+  </div>
+-->

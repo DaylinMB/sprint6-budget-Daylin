@@ -54,32 +54,31 @@
 ////////////////////////////////////////////////////////////
 
 
+
 .modal-content {
   height: 250px;
-   
-  .modal-body{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+}
 
-  strong {
-    font-size: 20px;
-    padding: 25px;
-  }
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-  p {
-    font-size: 16px;
-    padding-top: 20px;
-  }
+.modal-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 
-  /* 
-  .btn.btn-secondary {
-    background-color: #bbbbbb;
-    border-color: #bbbbbb;
-     float: right;
-  }
-  */
+.modal-body p {
+  font-size: 16px;
+  margin-top: 10px;
 }
 

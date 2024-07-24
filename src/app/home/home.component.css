@@ -19,9 +19,14 @@
   height: 1.5em;
 }
 
+.form-check-input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(15, 220, 39, 0.25);
+}
+
 .form-check-input:checked {
-  background-color: #0f8f0f;
-  border-color: #0f8f0f;
+  background-color: green;
+  border-color: green;
 }
 
 .text-right {
@@ -29,5 +34,5 @@
 }
 
 .border-success {
-  border: 2px solid #0f8f0f !important;
+  border: 2px solid green !important;
 }/*# sourceMappingURL=home.component.css.map */

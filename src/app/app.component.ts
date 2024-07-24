@@ -1,17 +1,11 @@
 /*app.component.ts*/
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HomeComponent, MatSlideToggleModule],
-  template: `<app-home></app-home>`,
-  styleUrls: ['./app.component.scss']
+  imports: [RouterModule],
+  template: `<router-outlet></router-outlet>`,
 })
-
-export class AppComponent {
-  title = 'sprint6-budget-Daylin';
-}
+export class AppComponent {}
