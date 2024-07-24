@@ -3,6 +3,7 @@ $card-border-radius: 10px;
 $card-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 $form-check-input-size: 1.5em;
 $max-width-container: 800px;
+$boder-gree: #0f8f0f;
 
 .container {
   max-width: $max-width-container;
@@ -13,7 +14,7 @@ $max-width-container: 800px;
   border-radius: $card-border-radius;
   box-shadow: $card-box-shadow;
   
-  .card-b ody {
+  .card-b body {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,8 +27,8 @@ $max-width-container: 800px;
 }
 
 .form-check-input:checked {
-  background-color: green;
-  border-color: green;
+  background-color: $boder-gree;
+  border-color: $boder-gree;
 }
 
 .text-right {
@@ -35,6 +36,6 @@ $max-width-container: 800px;
 }
 
 .border-success {
-  border: 2px solid green !important;
+  border: 2px solid $boder-gree !important;
 }
  

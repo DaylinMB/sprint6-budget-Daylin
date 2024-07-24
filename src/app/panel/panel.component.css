@@ -52,6 +52,7 @@
 
 .modal-content {
   text-align: center;
+  white-space: pre-line;
 }
 .modal-content h4 {
   font-size: 14px;
