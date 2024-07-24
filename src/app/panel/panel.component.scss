@@ -55,15 +55,31 @@
 
 
 .modal-content {
-  text-align: center;
-  white-space: pre-line;
-
-  h4 {
-    font-size: 14px;
+  height: 250px;
+   
+  .modal-body{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    
   }
 
-  h5 {
-    font-size: 12px;
-    font-weight: normal;
+  strong {
+    font-size: 20px;
+    padding: 25px;
   }
+
+  p {
+    font-size: 16px;
+    padding-top: 20px;
+  }
+
+  /* 
+  .btn.btn-secondary {
+    background-color: #bbbbbb;
+    border-color: #bbbbbb;
+     float: right;
+  }
+  */
 }
+

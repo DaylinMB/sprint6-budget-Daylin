@@ -51,13 +51,25 @@
 }
 
 .modal-content {
+  height: 250px;
+  /* 
+  .btn.btn-secondary {
+    background-color: #bbbbbb;
+    border-color: #bbbbbb;
+     float: right;
+  }
+  */
+}
+.modal-content .modal-body {
+  display: flex;
   text-align: center;
-  white-space: pre-line;
+  align-items: center;
 }
-.modal-content h4 {
-  font-size: 14px;
+.modal-content strong {
+  font-size: 20px;
+  padding: 25px;
 }
-.modal-content h5 {
-  font-size: 12px;
-  font-weight: normal;
+.modal-content p {
+  font-size: 16px;
+  padding-top: 20px;
 }/*# sourceMappingURL=panel.component.css.map */
