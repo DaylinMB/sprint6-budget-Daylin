@@ -3,6 +3,7 @@ $card-border-radius: 10px;
 $card-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 $form-check-input-size: 1.5em;
 $max-width-container: 800px;
+$primary-color: #28a745;
 
 .container {
   max-width: $max-width-container;
@@ -12,34 +13,71 @@ $max-width-container: 800px;
   border: none;
   border-radius: $card-border-radius;
   box-shadow: $card-box-shadow;
+  margin-bottom: 1rem;
   
-  .card-b body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }  
-}
-
-.form-check-input {
-  width: $form-check-input-size;
-  height: $form-check-input-size;
-}
-
-.form-check-input:focus {
-  outline: 0;
-  box-shadow: 0 0 0 .25rem rgba(15, 220, 39, 0.25);
-}
-
-
-.form-check-input:checked {
-  background-color: green;
-  border-color: green;
+  .border-success {
+    border: 2px solid $primary-color !important;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
 }
 
 .text-right {
   text-align: right;
 }
 
-.border-success {
-  border: 2px solid green !important;
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    flex: 1;
+    margin-bottom: 0;
+    
+    .form-control {
+      width: 100%;
+      border-radius: $card-border-radius;
+      box-shadow: $card-box-shadow;
+    }
+  }
+}
+
+.btn-success {
+  color: #fff;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: $card-border-radius;
+  
+  &:hover {
+    color: #fff;
+    background-color: darken($primary-color, 10%);
+    border-color: darken($primary-color, 10%);
+  }
+}
+
+.card-title {
+  margin-bottom: 1rem;
+}
+
+.ml-3 {
+  margin-left: 1rem !important;
+}
+
+.ml-2 {
+  margin-left: 0.5rem !important;
 }

@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./panel.component.scss'],
 })
 export class PanelComponent implements OnInit, OnChanges {
-  @Input() showPanel: boolean = true; // Verificar que esté correctamente tipado
+  @Input() showPanel: boolean = true;
   panelForm: FormGroup;
 
   constructor(private fb: FormBuilder, private budgetService: BudgetService) {

@@ -1,0 +1,74 @@
+<!-- budgets-list.html -->
+<div class="container mt-5">
+  <div class="mt-5">
+    <ul>
+      <li *ngFor="let budget of budgets">
+        <p><strong>Nombre:</strong> {{ budget.name }}</p>
+        <p><strong>Teléfono:</strong> {{ budget.phone }}</p>
+        <p><strong>Email:</strong> {{ budget.email }}</p>
+        <p><strong>Servicios:</strong></p>
+        <ul>
+          <li *ngIf="budget.seo">SEO</li>
+          <li *ngIf="budget.ads">ADS</li>
+          <li *ngIf="budget.web">Web</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    <div class="container mt-5">
+        <h3>Listado de presupuestos</h3>
+        <button (click)="goHome()" type="button" class="btn btn-success mb-3">Home</button>
+      
+        <div class="d-flex justify-content-end mb-3">
+          <button type="button" class="btn btn-outline-secondary me-3" (click)="sortBy('totalCost')">Precio</button>
+          <button type="button" class="btn btn-outline-secondary me-3" (click)="sortBy('fecha')">Fecha</button>
+          <button type="button" class="btn btn-outline-secondary me-3" (click)="sortBy('nombre')">ABC</button>
+          <input type="text" class="form-control icon-custom w-25" [(ngModel)]="searchName" placeholder="Search..." (keyup)="filterItems()">
+        </div>
+      
+        <form [formGroup]="budgetForm" (ngSubmit)="consultarPresupuesto()">
+          <div class="card p-3 mb-2">
+            <div class="row align-items-start card-body">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label for="nombre">Nom</label>
+                  <input type="text" id="nombre" class="form-control" formControlName="nombre">
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Telefon</label>
+                  <input type="text" id="telefono" class="form-control" formControlName="telefono">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" class="form-control" formControlName="email">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <h5>Total:</h5>
+                <p>{{ total }} €</p>
+              </div>
+              <div class="col-md-4 text-end">
+                <button type="submit" class="btn btn-success">Sol·licitar pressupost</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+  -->

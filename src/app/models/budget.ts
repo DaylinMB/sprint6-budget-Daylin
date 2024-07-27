@@ -1,12 +1,11 @@
 /*budget.ts*/
 export interface Budget {
+  name: string;
+  phone: string;
+  email: string;
   seo: boolean;
   ads: boolean;
   web: boolean;
-  pagines: number;
-  llenguatges: number;
-  total: number;
-  nombre: string;
-  telefono: string;
-  email: string;
+  pagines?: number;
+  llenguatges?: number;
 }
