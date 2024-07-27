@@ -1,2 +1,0 @@
-/* budgets-list.component.ts */
-
