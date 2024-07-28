@@ -1,24 +1,37 @@
 <!-- budgets-list.html -->
 <div class="container mt-5">
-  <div class="mt-5">
-    <ul>
-      <li *ngFor="let budget of budgets">
-        <p><strong>Nombre:</strong> {{ budget.name }}</p>
-        <p><strong>Teléfono:</strong> {{ budget.phone }}</p>
-        <p><strong>Email:</strong> {{ budget.email }}</p>
-        <p><strong>Servicios:</strong></p>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Pressupostos en curs:</h2>
+    <div class="d-flex align-items-center">
+      <input type="text" class="form-control mr-2" placeholder="Buscar per nom..." [(ngModel)]="searchTerm" (input)="searchBudget()">
+      <button class="btn btn-link" (click)="sortByDate()">Data</button>
+      <button class="btn btn-link" (click)="sortByPrice()">Import</button>
+      <button class="btn btn-link" (click)="sortByName()">Nom</button>
+    </div>
+  </div>
+  <div *ngFor="let budget of budgets" class="card mb-3 border">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h5 class="card-title">{{ budget.name }}</h5>
+          <p class="card-text">{{ budget.email }}</p>
+          <p class="card-text">{{ budget.phone }}</p>
+        </div>
+        <div>
+          <h5 class="card-title">Total: {{ budget.total }} €</h5>
+        </div>
+      </div>
+      <div>
+        <h6>Serveis contractats:</h6>
         <ul>
           <li *ngIf="budget.seo">SEO</li>
           <li *ngIf="budget.ads">ADS</li>
           <li *ngIf="budget.web">Web</li>
         </ul>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
-
-
-
-
+</div>
 
 
 
