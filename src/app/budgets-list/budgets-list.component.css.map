@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"budgets-list.component.css"}
+{"version":3,"sources":["budgets-list.component.scss","budgets-list.component.css"],"names":[],"mappings":"AAKA;EACE,gBAHoB;ACDtB;;ADOA;EACE,YAAA;EACA,mBAVmB;EAWnB,uCAVgB;ACMlB;;ADOA;EACE,YAAA;EACA,qBAAA;EACA,iBAAA;ACJF;ADKE;EACE,cApBY;ACiBhB;;ADOA;EACE,gBAAA;ACJF","file":"budgets-list.component.css"}

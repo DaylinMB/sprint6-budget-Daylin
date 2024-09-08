@@ -1,5 +1,4 @@
 /*budget.ts*/
-// budget.model.ts
 export interface Budget {
   name: string;
   phone: string;
@@ -8,5 +7,7 @@ export interface Budget {
   ads: boolean;
   web: boolean;
   total: number;
+  pagines: number;
+  llenguatges: number;
   date: Date;
 }

@@ -1,1 +1,22 @@
-/*# sourceMappingURL=budgets-list.component.css.map */
+.container {
+  max-width: 800px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-link {
+  color: black;
+  text-decoration: none;
+  margin-left: 10px;
+}
+.btn-link:hover {
+  color: #048044;
+}
+
+.form-control {
+  max-width: 200px;
+}/*# sourceMappingURL=budgets-list.component.css.map */

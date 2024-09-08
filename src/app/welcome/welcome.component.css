@@ -24,9 +24,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #030303;
+  color: #23295e;
   font-size: 2rem;
   font-family: Arial, sans-serif;
   margin: 0;
   text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+  font-weight: bold;
 }/*# sourceMappingURL=welcome.component.css.map */

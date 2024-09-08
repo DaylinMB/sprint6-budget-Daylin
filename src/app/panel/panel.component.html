@@ -1,6 +1,8 @@
 <!-- panel.component.html -->
-<div *ngIf="showPanel" class="panel-container">
+<div class="panel-container">
   <form [formGroup]="panelForm" class="form-inline">
+
+    <!-- Input for pages -->
     <div class="form-group d-flex justify-content-end align-items-center mb-3">
       <button type="button" class="btn btn-info me-2 info-button" data-bs-toggle="modal" data-bs-target="#helpPagesModal">
         <i class="bi bi-info-circle"></i>
@@ -11,6 +13,7 @@
       <button type="button" class="btn btn-light round-button" (click)="increment('pagines')">+</button>
     </div>
 
+    <!-- Input for languages -->
     <div class="form-group d-flex justify-content-end align-items-center">
       <button type="button" class="btn btn-info me-2 info-button" data-bs-toggle="modal" data-bs-target="#helpLanguagesModal">
         <i class="bi bi-info-circle"></i>
@@ -23,7 +26,7 @@
   </form>
 </div>
 
-<!-- Modal Pages -->
+<!-- Modal for help with pages -->
 <div class="modal fade" tabindex="-1" id="helpPagesModal" aria-labelledby="helpPagesModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center">
@@ -36,7 +39,7 @@
   </div>
 </div>
 
-<!-- Modal Languages -->
+<!-- Modal for help with languages -->
 <div class="modal fade" id="helpLanguagesModal" tabindex="-1" aria-labelledby="helpLanguagesModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center">

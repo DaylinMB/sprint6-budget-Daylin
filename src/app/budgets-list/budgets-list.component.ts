@@ -1,5 +1,29 @@
 /**budgets-list.component.ts */
 import { Component } from '@angular/core';
+import { BudgetService } from '../services/budget.service';
+
+@Component({
+  selector: 'app-budgets-list',
+  imports: [],
+  standalone: true,
+  templateUrl: './budgets-list.component.html',
+  styleUrls: ['./budgets-list.component.scss'],
+})
+export class BudgetsListComponent {
+  budgets = this.budgetService.getBudgets();
+
+  constructor(private budgetService: BudgetService) {}
+}
+
+
+        
+
+
+
+
+/**
+ * 
+import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // Para usar ngModel
 import { BudgetService } from '../services/budget.service';
@@ -38,3 +62,4 @@ export class BudgetsListComponent {
     );
   }
 }
+ */

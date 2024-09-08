@@ -11,9 +11,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.scss'],
 })
+
+
 export class PanelComponent implements OnInit, OnChanges {
-  @Input() showPanel: boolean = true;
-  panelForm: FormGroup;
+  @Input() /*showPanel: boolean = true;*/  panelForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private budgetService: BudgetService) {
     this.panelForm = this.fb.group({
@@ -41,15 +42,26 @@ export class PanelComponent implements OnInit, OnChanges {
     });
   }
 
-  increment(controlName: string) {
+  /*
+  increment(controlName: string): void {
     const control = this.panelForm.get(controlName) as FormControl;
     control.setValue(control.value + 1);
-  }
+  }*/
+    increment(field: string): void {
+      const currentValue = this.panelForm.get(field)?.value || 0;
+      this.panelForm.get(field)?.setValue(currentValue + 1);
+    }
 
-  decrement(controlName: string) {
+  /*decrement(controlName: string) {
     const control = this.panelForm.get(controlName) as FormControl;
     if (control.value > 1) {
       control.setValue(control.value - 1);
+    }
+  }*/
+  decrement(field: string): void {
+    const currentValue = this.panelForm.get(field)?.value || 0;
+    if (currentValue > 0) {
+      this.panelForm.get(field)?.setValue(currentValue - 1);
     }
   }
 }
