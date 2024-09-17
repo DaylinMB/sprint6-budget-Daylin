@@ -1,65 +1,65 @@
-/**budgets-list.component.ts */
+// budgets-list.component.ts
 import { Component } from '@angular/core';
-import { BudgetService } from '../services/budget.service';
-
-@Component({
-  selector: 'app-budgets-list',
-  imports: [],
-  standalone: true,
-  templateUrl: './budgets-list.component.html',
-  styleUrls: ['./budgets-list.component.scss'],
-})
-export class BudgetsListComponent {
-  budgets = this.budgetService.getBudgets();
-
-  constructor(private budgetService: BudgetService) {}
-}
-
-
-        
-
-
-
-
-/**
- * 
-import { Component } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Para usar ngModel
-import { BudgetService } from '../services/budget.service';
+import { CommonModule } from '@angular/common';
+import {  ReactiveFormsModule, FormBuilder, FormGroup,  Validators} from '@angular/forms';
 import { Budget } from '../models/budget';
 
 @Component({
   selector: 'app-budgets-list',
   standalone: true,
-  imports: [NgFor, NgIf, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './budgets-list.component.html',
-  styleUrls: ['./budgets-list.component.scss']
+  styleUrls: ['./budgets-list.component.scss'],
 })
 export class BudgetsListComponent {
-  budgets: Budget[] = [];
-  searchTerm: string = '';
+  budgetForm: FormGroup;
+  budgets: any[] = []; // Array para almacenar presupuestos
 
-  constructor(private budgetService: BudgetService) {
-    this.budgets = this.budgetService.getBudgets();
+  constructor(private fb: FormBuilder) {
+    // Inicializa el formulario con los campos necesarios
+    this.budgetForm = this.fb.group({
+      name: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+    });
   }
 
-  sortByDate(): void {
-    this.budgets.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  // Método para agregar un presupuesto
+  addBudget() {
+    if (this.budgetForm.valid) {
+      const newBudget = this.budgetForm.value;
+      newBudget.date = new Date(); // Añadir fecha actual al presupuesto
+      newBudget.total = this.calculateTotal(newBudget); // Método para calcular el total del presupuesto
+      this.budgets.push(newBudget);
+      this.budgetForm.reset(); // Reiniciar el formulario después de agregar el presupuesto
+    }
+
   }
 
-  sortByPrice(): void {
-    this.budgets.sort((a, b) => a.total - b.total);
+  // Métodos para ordenar presupuestos
+  sortByDate() {
+    this.budgets.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
   }
 
-  sortByName(): void {
+  sortByPrice() {
+    this.budgets.sort((a, b) => b.total - a.total);
+  }
+
+  sortByName() {
     this.budgets.sort((a, b) => a.name.localeCompare(b.name));
   }
 
-  searchBudget(): void {
-    this.budgets = this.budgetService.getBudgets().filter(budget =>
-      budget.name.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
+  // Método para calcular el total del presupuesto
+  calculateTotal(budget: Budget): number {
+    let total = 0;
+    if (budget.seo) total += 300;
+    if (budget.ads) total += 400;
+    if (budget.web) {
+      total += 500;
+      total += budget.pagines * budget.llenguatges * 30;
+    }
+    return total;
   }
 }
- */

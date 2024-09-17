@@ -1,7 +1,6 @@
-/*panel.component.ts*/
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { BudgetService } from '../services/budget.service';
+// panel.component.ts
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,56 +10,21 @@ import { CommonModule } from '@angular/common';
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.scss'],
 })
-
-
-export class PanelComponent implements OnInit, OnChanges {
-  @Input() /*showPanel: boolean = true;*/  panelForm!: FormGroup;
-
-  constructor(private fb: FormBuilder, private budgetService: BudgetService) {
-    this.panelForm = this.fb.group({
-      pagines: new FormControl(1),
-      llenguatges: new FormControl(1),
-    });
-  }
+export class PanelComponent implements OnInit {
+  @Input() panelForm!: FormGroup;
 
   ngOnInit(): void {
-    this.panelForm.valueChanges.subscribe(values => {
-      this.budgetService.updateBudget(values);
-    });
+    // Código de inicialización si es necesario
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['showPanel'] && changes['showPanel'].currentValue === true) {
-      this.resetForm();
-    }
+  increment(field: string): void {
+    const currentValue = this.panelForm.get(field)?.value || 0;
+    this.panelForm.get(field)?.setValue(currentValue + 1);
   }
 
-  resetForm(): void {
-    this.panelForm.reset({
-      pagines: 1,
-      llenguatges: 1
-    });
-  }
-
-  /*
-  increment(controlName: string): void {
-    const control = this.panelForm.get(controlName) as FormControl;
-    control.setValue(control.value + 1);
-  }*/
-    increment(field: string): void {
-      const currentValue = this.panelForm.get(field)?.value || 0;
-      this.panelForm.get(field)?.setValue(currentValue + 1);
-    }
-
-  /*decrement(controlName: string) {
-    const control = this.panelForm.get(controlName) as FormControl;
-    if (control.value > 1) {
-      control.setValue(control.value - 1);
-    }
-  }*/
   decrement(field: string): void {
     const currentValue = this.panelForm.get(field)?.value || 0;
-    if (currentValue > 0) {
+    if (currentValue > 1) {
       this.panelForm.get(field)?.setValue(currentValue - 1);
     }
   }

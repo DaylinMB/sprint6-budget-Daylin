@@ -2,23 +2,23 @@
 <div class="panel-container">
   <form [formGroup]="panelForm" class="form-inline">
 
-    <!-- Input for pages -->
+    <!-- Input para número de páginas -->
     <div class="form-group d-flex justify-content-end align-items-center mb-3">
       <button type="button" class="btn btn-info me-2 info-button" data-bs-toggle="modal" data-bs-target="#helpPagesModal">
         <i class="bi bi-info-circle"></i>
       </button>
-      <label class="me-2"><strong>Nombre de pàgines:</strong></label>
+      <label class="me-2"><strong>Número de páginas:</strong></label>
       <button type="button" class="btn btn-light me-2 round-button" (click)="decrement('pagines')">-</button>
       <input type="number" class="form-control text-center me-2" id="pagines" formControlName="pagines" readonly>
       <button type="button" class="btn btn-light round-button" (click)="increment('pagines')">+</button>
     </div>
 
-    <!-- Input for languages -->
+    <!-- Input para número de lenguajes -->
     <div class="form-group d-flex justify-content-end align-items-center">
       <button type="button" class="btn btn-info me-2 info-button" data-bs-toggle="modal" data-bs-target="#helpLanguagesModal">
         <i class="bi bi-info-circle"></i>
       </button>
-      <label class="me-2"><strong>Nombre de llenguatges:</strong></label>
+      <label class="me-2"><strong>Número de lenguajes:</strong></label>
       <button type="button" class="btn btn-light me-2 round-button" (click)="decrement('llenguatges')">-</button>
       <input type="number" class="form-control text-center me-2" id="llenguatges" formControlName="llenguatges" readonly>
       <button type="button" class="btn btn-light round-button" (click)="increment('llenguatges')">+</button>
@@ -26,27 +26,24 @@
   </form>
 </div>
 
-<!-- Modal for help with pages -->
+<!-- Modales de ayuda -->
 <div class="modal fade" tabindex="-1" id="helpPagesModal" aria-labelledby="helpPagesModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center">
       <div class="modal-body">
-        <strong class="modal-title" id="helpPagesModalLabel">Número de pàgines</strong>
-        <p>Afegeix les pàgines que tindrà el teu projecte. <br>
-          El cost de cada pàgina és de 30€.</p>
+        <strong class="modal-title" id="helpPagesModalLabel">Número de páginas</strong>
+        <p>Añade el número de páginas que tendrá tu proyecto. El coste de cada página es de 30€.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal for help with languages -->
 <div class="modal fade" id="helpLanguagesModal" tabindex="-1" aria-labelledby="helpLanguagesModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center">
       <div class="modal-body">
-        <strong class="modal-title" id="helpLanguagesModalLabel">Número de llenguatges</strong>
-        <p>Afegeix les llenguatges que tindrà el teu projecte.<br>
-          El cost de cada llenguatge és de 30€.</p>
+        <strong class="modal-title" id="helpLanguagesModalLabel">Número de lenguajes</strong>
+        <p>Añade los lenguajes que tendrá tu proyecto. El coste de cada lenguaje es de 30€.</p>
       </div>
     </div>
   </div>
