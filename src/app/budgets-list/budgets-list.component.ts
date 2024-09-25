@@ -140,47 +140,4 @@ export class BudgetsListComponent implements OnInit {
   isCardSelected(serviceName: string): boolean {
     return this.budgetForm.get(serviceName)!.value;
   }
-
-
-  new Vue({
-    el: '#budgetForm',
-    data: {
-      phone: '',
-      email: '',
-      phoneError: '',
-      emailError: '',
-    },
-    methods: {
-      validatePhone() {
-        const phoneRegex = /^[0-9]{9}$/;
-        if (!phoneRegex.test(this.phone)) {
-          this.phoneError = 'El número de teléfono debe tener exactamente 9 dígitos.';
-          return false;
-        }
-        this.phoneError = '';
-        return true;
-      },
-      validateEmail() {
-        const emailRegex = /^[a-zA-Z0-9._-]+@mail\.com$/;
-        if (!emailRegex.test(this.email)) {
-          this.emailError = 'El correo electrónico debe terminar con @mail.com.';
-          return false;
-        }
-        this.emailError = '';
-        return true;
-      },
-      submitForm() {
-        // Validar campos
-        const isPhoneValid = this.validatePhone();
-        const isEmailValid = this.validateEmail();
-  
-        if (isPhoneValid && isEmailValid) {
-          // Si todas las validaciones pasan, puedes continuar con el envío o la lógica adicional
-          alert('Formulario enviado con éxito');
-          // Aquí iría el código para procesar el formulario o hacer la solicitud
-        }
-      }
-    }
-  });
-  
 }
