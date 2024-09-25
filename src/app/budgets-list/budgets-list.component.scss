@@ -1,7 +1,7 @@
 $card-border-radius: 10px;
-$card-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-$max-width-container: 800px;
-$primary-color: #28a745;
+$card-box-shadow: 0 0 10px rgba(11, 123, 19, 0.1);
+$max-width-container: 1000px;
+$primary-color: #0d6d23;
 
 .container {
   max-width: $max-width-container;
@@ -9,8 +9,8 @@ $primary-color: #28a745;
 
 .card {
   border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: $card-border-radius;
+  box-shadow: $card-box-shadow;
   margin-bottom: 1rem;
 }
 
@@ -18,10 +18,12 @@ $primary-color: #28a745;
   padding: 1.5rem;
 }
 
-.form-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.row {
+  margin: 0; /* Asegura que no haya margen adicional */
+}
+
+.text-start {
+  text-align: left; /* Alineación a la izquierda */
 }
 
 .btn-success {
@@ -29,19 +31,125 @@ $primary-color: #28a745;
 }
 
 .btn-primary {
-  background-color: white;
-  border-radius: white; 
-  color: black;
+  background-color: transparent; /* Sin fondo azul */
+  color: gray; /* Color de texto gris */
+  border: 1px solid transparent; /* Sin borde visible */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
 }
 
-
-
-.email{
+.email, .phone, .total-label {
   color: gray;
+  font-size: 16px; /* Asegura tamaño de texto consistente */
 }
 
-.phone{
-  color: gray;
+.total-amount {
+  color: black; /* Color negro para el total */
+  font-weight: bold; /* Negrita */
+}
+
+.gray-text {
+  color: gray; /* Color gris para el texto */
+}
+
+.total-label {
+  font-size: 0.875rem; /* Tamaño de texto más pequeño para "Total:" */
+}
+
+.button-container {
+  display: flex; /* Alinear en fila */
+  justify-content: flex-end; /* Justifica a la derecha */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.search-container {
+  position: relative; /* Necesario para posicionar el ícono */
+  margin-left: 10px; /* Espacio entre los botones y el buscador */
+}
+
+.search-input {
+  padding: 5px 30px 5px 10px; /* Espacio interno */
+  width: 150px; /* Ancho ajustado del buscador */
+  border: 1px solid #ccc; /* Borde más delgado y color gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px; /* Ajusta la posición del ícono */
+  top: 50%; /* Centra verticalmente el ícono */
+  transform: translateY(-50%); /* Ajusta para centrar exactamente */
+  pointer-events: none; /* Evita que el ícono interfiera con el clic en el input */
 }
 
 
+
+///////////////////////////////////
+/// 
+/// 
+/// 
+.import-btn {
+  position: relative;
+  color: gray; /* Texto gris */
+  border: none; /* Sin borde */
+  background-color: transparent; /* Fondo transparente */
+  display: inline-flex;
+  align-items: center;
+}
+
+.import-btn.active {
+  color: black; /* Texto negro cuando está activo */
+}
+
+.import-btn .triangle {
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid gray; /* Triángulo gris */
+}
+
+.import-btn.active .triangle {
+  border-top-color: black; /* Cambiar el triángulo a negro cuando el botón esté activo */
+}
+
+///
+/// 
+/// /* Botón base */
+.btn-primary {
+  color: gray; /* Color del texto gris por defecto */
+  background-color: transparent; /* Sin fondo */
+  border: none; /* Sin bordes */
+  outline: none; /* Quitar el borde de foco (outline) */
+  box-shadow: none; /* Evita el resplandor o sombra al hacer clic */
+  transition: color 0.3s ease; /* Añadir una transición suave para cambiar el color */
+}
+
+/* Botón activo */
+.btn-primary.active {
+  color: black; /* Color negro cuando está seleccionado */
+  background-color: transparent; /* Sin fondo, incluso cuando está activo */
+}
+
+/* Triángulo */
+.triangle {
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid gray; /* Triángulo gris por defecto */
+}
+
+.btn.active {
+  background-color: transparent; /* Sin fondo, incluso cuando está activo */
+}
+
+.btn-primary:hover {
+  color: black; /* Cambia el color al pasar por encima si es necesario */
+  background-color: transparent; /* Sin fondo */
+}
+
+.btn-primary.active .triangle {
+  border-top-color: black; /* Cambiar el triángulo a negro cuando esté activo */
+}

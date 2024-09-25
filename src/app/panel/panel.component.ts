@@ -1,6 +1,6 @@
 // panel.component.ts
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,7 +11,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./panel.component.scss'],
 })
 export class PanelComponent implements OnInit {
-  @Input() panelForm!: FormGroup;
+  @Input() panelForm!: FormGroup; // Definir panelForm como un @Input
+
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     // Código de inicialización si es necesario

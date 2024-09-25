@@ -1,5 +1,5 @@
 // models/budget.ts
-export interface Budget {
+export interface Ilist {
   name: string;
   phone: string;
   email: string;
@@ -8,6 +8,12 @@ export interface Budget {
   web: boolean;
   pagines: number;
   llenguatges: number;
-  total: number;
   date: Date;
+  total: number;
+}
+
+export interface Product {
+  name: string;
+  price: number;
+  article: string;
 }
