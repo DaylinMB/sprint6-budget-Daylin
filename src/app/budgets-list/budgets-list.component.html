@@ -1,5 +1,4 @@
 <div class="container mt-5">
-  <!-- Formulario de solicitud de presupuesto -->
       <form [formGroup]="budgetForm" (ngSubmit)="addBudget()">
         <ng-container *ngFor="let service of services; $index">
           <div class="card mb-3 border"
@@ -10,7 +9,7 @@
               <div>
                 <h5 class="card-title">{{ service.descripcion }}</h5>
                 <p class="card-text">
-                  Descripción del servicio {{ service.descripcion }}
+                  Programacio d'una web responsive completa 
                 </p>
               </div>
               <div class="text-center">
@@ -23,11 +22,10 @@
                   [formControlName]="service.nombre"
                   (change)="togglePanel(service.nombre, $event)"
                 />
-                <label class="form-check-label">Añadir</label>
+                <label class="form-check-label">Afegir</label>
               </div>
             </div>
 
-            <!-- Mostrar panel si el servicio es 'web' -->
             <ng-container
               *ngIf="showPanel[service.nombre] && service.nombre === 'web'"
             >
@@ -42,12 +40,10 @@
 
         <div class="card p-3 demanar">
           <div class="row align-items-center">
-            <!-- Título alineado a la izquierda -->
             <div class="col-md-12">
               <h3 class="text-left">Demanar pressupost</h3>
             </div>
             
-            <!-- Campos y botón alineados en una misma fila -->
             <div class="col-md-12 d-flex justify-content-between align-items-center">
               <div class="form-group mb-0">
                 <input
@@ -89,36 +85,26 @@
         
       </form>
  
-  <h2>Presupuestos en curso</h2>
+  <h2>Pressupostos en curs</h2>
 
   <!-- Botones para ordenar la lista -->
   <div class="button-container">
-    <!-- Buscador -->
-    <div class="search-container">
-      <input
-  type="text"
-  [(ngModel)]="searchTerm"
-  (input)="searchBudgets()"  
-  placeholder="Buscar..."
-  class="search-input"
-/>
-      <span class="search-icon">
-        <i class="fa fa-search"></i>
-      </span>
-    </div>
-
-    <!-- Botones para ordenar la lista -->
     <div class="button-container mb-3">
+      <!-- Buscador -->
+      <div class="search-container">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+      </div>
+
       <button class="btn btn-primary me-2" 
         [ngClass]="{'active': activeButton === 'date'}" (click)="sortByDate()"> Data
       </button>
 
-      <!-- Botón de Import -->
       <button class="btn btn-primary me-2 import-btn" [ngClass]="{'active': activeButton === 'price'}" (click)="sortByPrice()">
         Import <span class="triangle"></span>
       </button>
 
-      <!-- Botón de Nom -->
       <button class="btn btn-primary me-2" [ngClass]="{'active': activeButton === 'name'}" 
         (click)="sortByName()"> Nom
       </button>
@@ -131,17 +117,13 @@
     <div class="card p-3 mb-2">
       <div class="row align-items-start card-body">
         <div class="col-md-5 text-start">
-          <!-- Alineación a la izquierda -->
           <p class="card-title fs-4">{{ budget.name }}</p>
           <p class="email gray-text">{{ budget.email }}</p>
-          <!-- Clase para el color gris -->
           <p class="phone gray-text">{{ budget.phone }}</p>
-          <!-- Clase para el color gris -->
         </div>
 
         <div class="col-md-4 text-start">
-          <!-- Alineación a la izquierda -->
-          <p class="usuario fs-5">Servicios contratados:</p>
+          <p class="usuario fs-5">Serveis contractats:</p>
           <ul>
             @if (budget.seo) {
             <li>SEO</li>
@@ -149,15 +131,14 @@
             <li>ADS</li>
             } @if (budget.web) {
             <li>
-              Web ({{ budget.pagines }} páginas,
-              {{ budget.llenguatges }} lenguajes)
+              WEB ({{ budget.pagines }} pàgines,
+              {{ budget.llenguatges }} llenguatges)
             </li>
             }
           </ul>
         </div>
 
         <div class="col-md-3 text-start">
-          <!-- Alineación a la izquierda -->
           <p class="total-label fs-5">Total:</p>
           <p class="total-amount fs-5">{{ budget.total }} €</p>
         </div>

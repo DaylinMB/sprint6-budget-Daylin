@@ -11,12 +11,11 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./panel.component.scss'],
 })
 export class PanelComponent implements OnInit {
-  @Input() panelForm!: FormGroup; // Definir panelForm como un @Input
+  @Input() panelForm!: FormGroup; 
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    // Código de inicialización si es necesario
   }
 
   increment(field: string): void {

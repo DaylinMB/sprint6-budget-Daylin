@@ -7,7 +7,7 @@
       <button type="button" class="btn btn-info me-2 info-button" data-bs-toggle="modal" data-bs-target="#helpPagesModal">
         <i class="bi bi-info-circle"></i>
       </button>
-      <label class="me-2"><strong>Número de páginas:</strong></label>
+      <label class="me-2"><strong>Nombre de pàgines:</strong></label>
       <button type="button" class="btn btn-light me-2 round-button" (click)="decrement('pagines')">-</button>
       <input type="number" class="form-control text-center me-2" id="pagines" formControlName="pagines" readonly>
       <button type="button" class="btn btn-light round-button" (click)="increment('pagines')">+</button>
@@ -18,7 +18,7 @@
       <button type="button" class="btn btn-info me-2 info-button" data-bs-toggle="modal" data-bs-target="#helpLanguagesModal">
         <i class="bi bi-info-circle"></i>
       </button>
-      <label class="me-2"><strong>Número de lenguajes:</strong></label>
+      <label class="me-2"><strong>Nombre de llenguatges:</strong></label>
       <button type="button" class="btn btn-light me-2 round-button" (click)="decrement('llenguatges')">-</button>
       <input type="number" class="form-control text-center me-2" id="llenguatges" formControlName="llenguatges" readonly>
       <button type="button" class="btn btn-light round-button" (click)="increment('llenguatges')">+</button>
@@ -31,8 +31,8 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center">
       <div class="modal-body">
-        <strong class="modal-title" id="helpPagesModalLabel">Número de páginas</strong>
-        <p>Añade el número de páginas que tendrá tu proyecto. El coste de cada página es de 30€.</p>
+        <strong class="modal-title" id="helpPagesModalLabel">Nombre de pàgines</strong>
+        <p>Afegeix el nombre de pàgines que tindrà el teu projecte. El cost de cada pàgina és de 30€.</p>
       </div>
     </div>
   </div>
@@ -42,8 +42,8 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center">
       <div class="modal-body">
-        <strong class="modal-title" id="helpLanguagesModalLabel">Número de lenguajes</strong>
-        <p>Añade los lenguajes que tendrá tu proyecto. El coste de cada lenguaje es de 30€.</p>
+        <strong class="modal-title" id="helpLanguagesModalLabel">Nombre de llenguatges</strong>
+        <p>Afegeix els llenguatges que tindrà el teu projecte. El cost de cada llenguatge és de 30€.</p>
       </div>
     </div>
   </div>
